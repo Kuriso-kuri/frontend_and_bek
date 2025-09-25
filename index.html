@@ -1,52 +1,64 @@
 <!DOCTYPE html>
-<html lamg = "ru">
- <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Семестровая работа</title>
- </head>
- <body>
- <div id="header">Хэдер</div>
- <div id="menu">
- <ul>
- <li><a href="index.html">Главная</a></li>
- <li><a href="pages/news.html">Новости</a></li>
- <li><a href="pages/practices.html">Практики</a></li>
- <li><a href="pages/goods.html">Товары</a></li>
- <li><a href="pages/contacts.html">Контакты</a></li>
- </ul>
- </div>
- <div id="content">
- <p>Информация об авторе</p>
- <img src="images/photo.jpg" alt="Фото автора" width="200"
-height="250">
- <p>Макеенков Матвей Максимович</p>
- <p>ЭФБО-07-024</p>
- <p>Обо мне: Девяносто девять процентов из тех, кто сидит в этом зале не знают кто я такой.
-    Год назад я жил на окраине Лондона, в комнате с тараканами, клопами и одной мышью, которая жила в духовке. 
-    Рядом со мной снимал комнату татуировщик из Прибалтики по имени Саня. 
-    То что я сегодня стою здесь — это заслуга тех, кто голосовал за меня на сайте "GQ" 
-    и вообще голосовал за меня в самых разных голосованиях, те кто слушает мои треки, 
-    поддерживает меня на протяжении последних лет</p>
- <div>Хожу</div>
- <div>Брожу</div>
- <div>Лондоню</div>
- <div>5+</div>
- <div>
- Мой опыт работы:
- <div>
- Опыт 1<br>
- Работаю студентом
- </div>
- Опыт 2<br>
- Работаю человеком
- </div>
- <div>
- Опыт 3<br>
- Работаю матвеем
- </div>
- </div>
- </div>
- <div id="footer">Фантазер, ты меня называла, фантазер</div>
- </body>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Семестровая работа</title>
+    <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">Хэдер</div>
+        <div class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/contacts.html">Контакты</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="profile-header">
+                <h1 class="profile-title">Информация об авторе</h1>
+                <img class="profile-photo" src="images/photo.jpg" alt="Фото автора">
+                <h2 class="profile-name">Макеенков Матвей Максимович</h2>
+                <p class="profile-group">ЭФБО-07-024</p>
+            </div>
+
+            <div class="about-me">
+                <p>Обо мне: Девяносто девять процентов из тех, кто сидит в этом зале не знают кто я такой.
+                    Год назад я жил на окраине Лондона, в комнате с тараканами, клопами и одной мышью, которая жила в духовке. 
+                    Рядом со мной снимал комнату татуировщик из Прибалтики по имени Саня. 
+                    То что я сегодня стою здесь — это заслуга тех, кто голосовал за меня на сайте "GQ" 
+                    и вообще голосовал за меня в самых разных голосованиях, те кто слушает мои треки, 
+                    поддерживает меня на протяжении последних лет</p>
+            </div>
+
+            <div class="skills-container">
+                <div class="skill-tag">Хожу</div>
+                <div class="skill-tag">Брожу</div>
+                <div class="skill-tag">Лондоню</div>
+                <div class="skill-tag">5+</div>
+            </div>
+
+            <div class="experience-section">
+                <h2 class="section-title">Мой опыт работы</h2>
+                <div class="experience-card">
+                    <h3 class="experience-title">Опыт 1</h3>
+                    <p class="experience-desc">Работаю студентом</p>
+                </div>
+                <div class="experience-card">
+                    <h3 class="experience-title">Опыт 2</h3>
+                    <p class="experience-desc">Работаю человеком</p>
+                </div>
+                <div class="experience-card">
+                    <h3 class="experience-title">Опыт 3</h3>
+                    <p class="experience-desc">Работаю матвеем</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">Фантазер, ты меня называла, фантазер</div>
+    </div>
+</body>
 </html>
