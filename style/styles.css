@@ -1,4 +1,3 @@
-/* ===== БАЗОВЫЕ СТИЛИ ===== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -7,7 +6,6 @@ body {
     min-height: 100vh;
 }
 
-/* ===== КОНТЕЙНЕР СТРАНИЦЫ ===== */
 .page-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -23,7 +21,6 @@ body {
         "footer";
 }
 
-/* ===== ШАПКА ===== */
 .header {
     background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     color: white;
@@ -35,7 +32,6 @@ body {
     grid-area: header;
 }
 
-/* ===== НАВИГАЦИЯ ===== */
 .nav {
     background: #2c3e50;
     padding: 20px 0;
@@ -69,7 +65,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
 main.content {
     padding: 40px;
     max-width: 900px;
@@ -77,7 +72,6 @@ main.content {
     grid-area: main;
 }
 
-/* ===== ГЛАВНАЯ СТРАНИЦА ===== */
 .profile-header {
     text-align: center;
     margin-bottom: 40px;
@@ -123,7 +117,6 @@ main.content {
     line-height: 1.8;
 }
 
-/* ===== НАВЫКИ ===== */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -148,7 +141,6 @@ main.content {
     box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
 }
 
-/* ===== ОПЫТ РАБОТЫ ===== */
 .experience-section {
     margin-top: 50px;
 }
@@ -193,7 +185,6 @@ main.content {
     margin: 0;
 }
 
-/* ===== НОВОСТИ ===== */
 .news-container {
     display: grid;
     gap: 25px;
@@ -226,7 +217,6 @@ main.content {
     margin: 0;
 }
 
-/* ===== ТОВАРЫ ===== */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -272,7 +262,6 @@ main.content {
     margin: 5px 0;
 }
 
-/* ===== КОНТАКТЫ ===== */
 .contacts-container {
     text-align: center;
 }
@@ -331,7 +320,6 @@ main.content {
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
-/* ===== ФУТЕР ===== */
 .footer {
     background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     color: white;
@@ -341,7 +329,6 @@ main.content {
     grid-area: footer;
 }
 
-/* ===== КЛАССЫ ИЗ ПРЕДЫДУЩЕЙ РАБОТЫ ===== */
 .main-heading {
     font-size: 36px;
     color: #2c3e50;
@@ -388,9 +375,6 @@ main.content {
     box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
 }
 
-/* ===== ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ИЗ ПРЕДЫДУЩЕЙ ВЕРСИИ ===== */
-
-/* Дополнительные эффекты для карточек товаров */
 .product-card::before {
     content: '';
     position: absolute;
@@ -411,7 +395,6 @@ main.content {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* Дополнительные hover-эффекты */
 .nav-link:active {
     transform: translateY(-1px);
 }
@@ -421,7 +404,6 @@ main.content {
     box-shadow: 0 8px 25px rgba(79, 172, 254, 0.5);
 }
 
-/* Специфические стили для главной страницы */
 .profile-header h1 {
     margin-bottom: 10px;
 }
@@ -439,7 +421,6 @@ main.content {
     text-align: center;
 }
 
-/* ===== АДАПТИВНОСТЬ ===== */
 @media (max-width: 768px) {
     .nav-list {
         flex-direction: column;
@@ -496,7 +477,6 @@ main.content {
     }
 }
 
-/* Дополнительные утилитарные классы */
 .text-center {
     text-align: center;
 }
@@ -508,8 +488,6 @@ main.content {
 .mt-20 {
     margin-top: 20px;
 }
-
-/* Стили для скрытых элементов */
 .sr-only {
     position: absolute;
     width: 1px;
