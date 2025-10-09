@@ -8,8 +8,11 @@
 </head>
 <body>
     <div class="page-container">
-        <div class="header">Хэдер</div>
-        <div class="nav">
+        <header class="header">
+            <h1>Хэдер</h1>
+        </header>
+
+        <nav class="nav">
             <ul class="nav-list">
                 <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
                 <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
@@ -17,30 +20,36 @@
                 <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
                 <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
             </ul>
-        </div>
-        <div class="content">
-            <h1 class="main-heading">Последние новости</h1>
+        </nav>
+
+        <main class="content">
+            <h1 class="main-heading">Новости</h1>
             
-            <div class="news-item">
-                <h2 class="news-title">Новость 1: Продажи Lada Iscra в сентябре взлетели</h2>
-                <p class="news-meta"><small>Дата: 25.09.2025 | Автор: Матвей Макеенков</small></p>
-                <p class="text-paragraph">Продажи Lada Iscra в сентябре взлетели в 55 раз по сравнению с августом!</p>
-                <p class="text-paragraph">Секрет АвтоВАЗа прост: за август продали всего 1 машину, а за сентябрь — 55.</p>
+            <div class="news-container">
+                <article class="news-item">
+                    <h2 class="news-title">Новость 1: Запуск нового проекта</h2>
+                    <p class="news-meta"><small>Дата: 25.09.2025 | Автор: Матвей Макеенков</small></p>
+                    <p class="text-paragraph">Мы рады сообщить о запуске нашего нового проекта, который изменит подход к веб-разработке. Проект включает в себя современные технологии и инновационные решения.</p>
+                    <p class="text-paragraph">Уже в следующем месяце мы планируем выпустить первую бета-версию для тестирования.</p>
+                </article>
+                
+                <article class="news-item">
+                    <h2 class="news-title">Новость 2: Обновление дизайна</h2>
+                    <p class="news-meta"><small>Дата: 25.09.2025 | Автор: Матвей Макеенков</small></p>
+                    <p class="text-paragraph">Наш сайт получил полное обновление дизайна с использованием современных CSS-технологий. Мы добавили анимации, улучшили пользовательский опыт и адаптировали сайт для мобильных устройств.</p>
+                </article>
+                
+                <article class="news-item">
+                    <h2 class="news-title">Новость 3: Мастер-класс по CSS</h2>
+                    <p class="news-meta"><small>Дата: 25.09.2025 | Автор: Матвей Макеенков</small></p>
+                    <p class="text-paragraph">Приглашаем всех желающих на бесплатный мастер-класс по работе с классами в CSS. На мероприятии мы рассмотрим лучшие практики и современные подходы к стилизации веб-страниц.</p>
+                </article>
             </div>
-            
-            <div class="news-item">
-                <h2 class="news-title">Новость 2: СВАГА!</h2>
-                <p class="news-meta"><small>Дата: 25.09.2025 | Автор: Матвей Макеенков</small></p>
-                <p class="text-paragraph">Свага стала сваговее чем свага была сваговой до этого.</p>
-            </div>
-            
-            <div class="news-item">
-                <h2 class="news-title">Новость 3: ПМ и МП</h2>
-                <p class="news-meta"><small>Дата: 25.09.2025 | Автор: Матвей Макеенков</small></p>
-                <p class="text-paragraph">ПМ и МП выпустили новый фит(уже давно)</p>
-            </div>
-        </div>
-        <div class="footer">Фантазер, ты меня называла, фантазер</div>
+        </main>
+
+        <footer class="footer">
+            <p>Фантазер, ты меня называла, фантазер</p>
+        </footer>
     </div>
 </body>
 </html>

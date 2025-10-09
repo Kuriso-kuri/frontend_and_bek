@@ -8,8 +8,13 @@
 </head>
 <body>
     <div class="page-container">
-        <div class="header">Хэдер</div>
-        <div class="nav">
+        <!-- СЕМАНТИЧЕСКИЙ ТЕГ: header вместо div -->
+        <header class="header">
+            <h1>Хэдер</h1>
+        </header>
+
+        <!-- СЕМАНТИЧЕСКИЙ ТЕГ: nav вместо div -->
+        <nav class="nav">
             <ul class="nav-list">
                 <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
                 <li class="nav-item"><a class="nav-link" href="pages/news.html">Новости</a></li>
@@ -17,47 +22,65 @@
                 <li class="nav-item"><a class="nav-link" href="pages/goods.html">Товары</a></li>
                 <li class="nav-item"><a class="nav-link" href="pages/contacts.html">Контакты</a></li>
             </ul>
-        </div>
-            <div class="profile-header">
-                <h2 class="sub-heading">Информация об авторе</h2>
-                <img class="profile-photo" src="images/photo.jpg" alt="Фото автора">
-                <h3 class="profile-name">Макеенков Матвей Максимович</h3>
-                <p class="profile-group">ЭФБО-07-024</p>
-            </div>
+        </nav>
 
-            <div class="about-me">
-                <p class="text-paragraph">Обо мне: Девяносто девять процентов из тех, кто сидит в этом зале не знают кто я такой.
+        <!-- СЕМАНТИЧЕСКИЙ ТЕГ: main вместо div -->
+        <main class="content">
+            <!-- СЕМАНТИЧЕСКИЙ ТЕГ: article вместо div -->
+            <article class="profile-header">
+                <h1 class="profile-title">Информация об авторе</h1>
+                <img class="profile-photo" src="images/photo.jpg" alt="Фото автора">
+                <h2 class="profile-name">Макеенков Матвей Максимович</h2>
+                <p class="profile-group">ЭФБО-07-024</p>
+            </article>
+
+            <!-- СЕМАНТИЧЕСКИЙ ТЕГ: section вместо div -->
+            <section class="about-me">
+                <h2>Обо мне</h2>
+                <p>Обо мне: Девяносто девять процентов из тех, кто сидит в этом зале не знают кто я такой.
                     Год назад я жил на окраине Лондона, в комнате с тараканами, клопами и одной мышью, которая жила в духовке. 
-                    Рядом со мной снимал комнату татуировщик из Прибалтики по имени Саня.</p>
-                <p class="text-paragraph">То что я сегодня стою здесь — это заслуга тех, кто голосовал за меня на сайте "GQ" 
+                    Рядом со мной снимал комнату татуировщик из Прибалтики по имени Саня. 
+                    То что я сегодня стою здесь — это заслуга тех, кто голосовал за меня на сайте "GQ" 
                     и вообще голосовал за меня в самых разных голосованиях, те кто слушает мои треки, 
                     поддерживает меня на протяжении последних лет</p>
-            </div>
+            </section>
 
-            <div class="skills-container">
-                <div class="skill-tag">Хожу</div>
-                <div class="skill-tag">Брожу</div>
-                <div class="skill-tag">Лондоню</div>
-                <div class="skill-tag">5+</div>
-            </div>
+            <!-- СЕМАНТИЧЕСКИЙ ТЕГ: section вместо div + GRID для навыков -->
+            <section class="skills-container">
+                <h2>Мои навыки</h2>
+                <div class="skills-grid">
+                    <div class="skill-tag">Хожу</div>
+                    <div class="skill-tag">Брожу</div>
+                    <div class="skill-tag">Лондоню</div>
+                    <div class="skill-tag">5+</div>
+                </div>
+            </section>
 
-            <div class="experience-section">
-                <h2 class="sub-heading">Мой опыт работы</h2>
-                <div class="experience-card">
-                    <h3 class="experience-title">Опыт 1</h3>
-                    <p class="experience-desc">Работаю студентом</p>
+            <!-- СЕМАНТИЧЕСКИЙ ТЕГ: section вместо div + GRID для опыта -->
+            <section class="experience-section">
+                <h2 class="section-title">Мой опыт работы</h2>
+                <div class="experience-grid">
+                    <!-- СЕМАНТИЧЕСКИЙ ТЕГ: article вместо div -->
+                    <article class="experience-card">
+                        <h3 class="experience-title">Опыт 1</h3>
+                        <p class="experience-desc">Работаю студентом</p>
+                    </article>
+                    <article class="experience-card">
+                        <h3 class="experience-title">Опыт 2</h3>
+                        <p class="experience-desc">Работаю человеком</p>
+                    </article>
+                    <article class="experience-card">
+                        <h3 class="experience-title">Опыт 3</h3>
+                        <p class="experience-desc">Работаю матвеем</p>
+                    </article>
                 </div>
-                <div class="experience-card">
-                    <h3 class="experience-title">Опыт 2</h3>
-                    <p class="experience-desc">Работаю человеком</p>
-                </div>
-                <div class="experience-card">
-                    <h3 class="experience-title">Опыт 3</h3>
-                    <p class="experience-desc">Работаю матвеем</p>
-                </div>
-            </div>
-        </div>
-        <div class="footer">Фантазер, ты меня называла, фантазер</div>
+            </section>
+        </main>
+
+        <!-- СЕМАНТИЧЕСКИЙ ТЕГ: footer вместо div -->
+        <footer class="footer">
+            <p>Фантазер, ты меня называла, фантазер</p>
+        </footer>
     </div>
 </body>
 </html>
