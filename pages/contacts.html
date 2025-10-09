@@ -8,8 +8,11 @@
 </head>
 <body>
     <div class="page-container">
-        <div class="header">Хэдер</div>
-        <div class="nav">
+        <header class="header">
+            <h1>Хэдер</h1>
+        </header>
+
+        <nav class="nav">
             <ul class="nav-list">
                 <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
                 <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
@@ -17,9 +20,10 @@
                 <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
                 <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
             </ul>
-        </div>
-        <div class="content">
-            <h1 class="main-heading">Свяжитесь с нами</h1>
+        </nav>
+
+        <main class="content">
+            <h1 class="main-heading">Контакты</h1>
             
             <div class="contact-info">
                 <div class="contact-item">
@@ -31,15 +35,19 @@
                     <h3 class="contact-label">Адрес:</h3>
                     <p class="contact-value">г. Москва, ул. Проспект Матери Веранды, д. 78</p>
                 </div>
+                
                 <button class="contact-button" onclick="callMe()">Не звоните мне</button>
             </div>
-        </div>
-        <div class="footer">Фантазер, ты меня называла, фантазер</div>
+        </main>
+
+        <footer class="footer">
+            <p>Фантазер, ты меня называла, фантазер</p>
+        </footer>
     </div>
 
     <script>
         function callMe() {
-            alert("Мы не свяжемся с вами в ближайшее время.");
+            alert("Функция звонка дестабилизирована! Мы не свяжемся с вами в ближайшее время.");
         }
     </script>
 </body>
