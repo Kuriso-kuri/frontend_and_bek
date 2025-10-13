@@ -919,3 +919,27 @@ body {
 .slide-in {
     animation: slideIn var(--transition-base);
 }
+/* Добавить в конец styles.css */
+
+/* Центрирование заголовков */
+.text-center {
+    text-align: center !important;
+}
+
+/* Исправление для основного заголовка */
+.main__heading {
+    text-align: center;
+    width: 100%;
+}
+
+/* Исправление для подзаголовков */
+.sub-heading {
+    text-align: center;
+    width: 100%;
+}
+
+/* Гарантия что контейнер контактов центрирован */
+.contacts {
+    text-align: center;
+    width: 100%;
+}
