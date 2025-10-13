@@ -17,6 +17,7 @@
                 <svg class="theme-switcher__icon" viewBox="0 0 24 24">
                     <path d="M12,18C8.69,18 6,15.31 6,12C6,8.69 8.69,6 12,6C15.31,6 18,8.69 18,12C18,15.31 15.31,18 12,18M12,4C7.58,4 4,7.58 4,12C4,16.42 7.58,20 12,20C16.42,20 20,16.42 20,12C20,7.58 16.42,4 12,4M12,7.5C11.72,7.5 11.5,7.72 11.5,8V12C11.5,12.28 11.72,12.5 12,12.5C12.28,12.5 12.5,12.28 12.5,12V8C12.5,7.72 12.28,7.5 12,7.5Z"/>
                 </svg>
+                <span id="themeText">Тёмная</span>
             </button>
         </header>
         
@@ -113,18 +114,18 @@
                 <div class="products__grid">
                     <article class="product-card product-card--selected" tabindex="0">
                         <img src="images/product1.png" alt="Товар 1" class="product-card__image">
-                        <h3 class="product-card__title">Выбранный товар</h3>
-                        <p class="product-card__price"><span class="product-card__price--old">4000₽</span> 3000₽</p>
+                        <h3 class="product-card__title">Берет снятый с убитого клашара</h3>
+                        <p class="product-card__price">3000000₽</p>
                     </article>
                     <article class="product-card product-card--discount" tabindex="0">
                         <img src="images/product2.png" alt="Товар 2" class="product-card__image">
-                        <h3 class="product-card__title">Товар со скидкой</h3>
-                        <p class="product-card__price"><span class="product-card__price--old">5000₽</span> 2500₽</p>
+                        <h3 class="product-card__title">Горгород</h3>
+                        <p class="product-card__price">дисс от Славы КПСС</p>
                     </article>
                     <article class="product-card" tabindex="0">
                         <img src="images/product3.png" alt="Товар 3" class="product-card__image">
-                        <h3 class="product-card__title">Обычный товар</h3>
-                        <p class="product-card__price">1500₽</p>
+                        <h3 class="product-card__title">Кто убил Марка</h3>
+                        <p class="product-card__price">дисс от Славы КПСС</p>
                     </article>
                 </div>
             </section>
@@ -139,10 +140,12 @@
     <script>
         // Переключение темы (Задача 4)
         const themeSwitcher = document.getElementById('themeSwitcher');
+        const themeText = document.getElementById('themeText');
         const currentTheme = localStorage.getItem('theme') || 'light';
         
         // Установка начальной темы
         document.documentElement.setAttribute('data-theme', currentTheme);
+        updateThemeText(currentTheme);
         
         themeSwitcher.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -150,13 +153,18 @@
             
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
+            updateThemeText(newTheme);
             
             // Анимация переключения
-            themeSwitcher.style.transform = 'scale(0.8)';
+            themeSwitcher.style.transform = 'scale(0.9)';
             setTimeout(() => {
                 themeSwitcher.style.transform = 'scale(1)';
             }, 150);
         });
+
+        function updateThemeText(theme) {
+            themeText.textContent = theme === 'light' ? 'Тёмная' : 'Светлая';
+        }
 
         // Интерактивность для карточек товара (Задача 5)
         document.addEventListener('DOMContentLoaded', () => {
@@ -175,16 +183,6 @@
                     }
                 });
             });
-        });
-
-        // Динамическое управление CSS переменными
-        document.addEventListener('DOMContentLoaded', () => {
-            // Пример изменения переменной через JavaScript
-            const updatePrimaryColor = (color) => {
-                document.documentElement.style.setProperty('--color-primary', color);
-            };
-            
-            // Можно добавить дополнительные функции для динамического изменения темы
         });
     </script>
 </body>

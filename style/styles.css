@@ -142,10 +142,16 @@ body {
     background: rgba(255, 255, 255, 0.1);
     border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--radius-xl);
-    padding: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
     cursor: pointer;
     transition: var(--transition-base);
     backdrop-filter: blur(10px);
+    color: var(--color-white);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
 }
 
 .theme-switcher:hover {
@@ -155,8 +161,8 @@ body {
 }
 
 .theme-switcher__icon {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     fill: var(--color-white);
     transition: var(--transition-base);
 }
@@ -292,7 +298,7 @@ body {
 
 /* Блок about */
 .about {
-    background: var(--gradient-light);
+    background: var(--color-background);
     padding: var(--space-2xl);
     margin-bottom: var(--space-2xl);
     border-radius: var(--radius-xl);
@@ -469,15 +475,17 @@ body {
 /* Блок product-card (Задача 5) */
 .product-card {
     background: var(--color-background);
-    padding: var(--space-2xl);
-    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
     text-align: center;
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-md);
     transition: all var(--transition-base);
     position: relative;
     overflow: hidden;
     border: 1px solid var(--color-border);
     cursor: pointer;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
 .product-card::before {
@@ -492,8 +500,8 @@ body {
 }
 
 .product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
 }
 
 .product-card:hover::before {
@@ -540,9 +548,9 @@ body {
 }
 
 .product-card__image {
-    width: 200px;
-    height: 250px;
-    border-radius: var(--radius-lg);
+    width: 150px;
+    height: 180px;
+    border-radius: var(--radius-base);
     object-fit: cover;
     margin-bottom: var(--space-lg);
     border: 3px solid var(--color-border);
@@ -555,21 +563,21 @@ body {
 }
 
 .product-card__title {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
     color: var(--color-main);
     margin: var(--space-md) 0;
     font-weight: var(--font-weight-semibold);
 }
 
 .product-card__price {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-lg);
     color: var(--color-accent);
     font-weight: var(--font-weight-bold);
     margin: var(--space-sm) 0;
 }
 
 .product-card__price--old {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
     color: var(--color-text-light);
     text-decoration: line-through;
     margin-right: var(--space-sm);
@@ -592,23 +600,23 @@ body {
 
 /* Стили для страницы новостей */
 .news {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: var(--space-lg);
 }
 
 .news__item {
     background: var(--color-background);
-    padding: var(--space-2xl);
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-lg);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
     border-left: 4px solid var(--color-primary);
     transition: var(--transition-base);
-    border: 1px solid var(--color-border);
 }
 
 .news__item:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
 }
 
 .news__title {
@@ -621,13 +629,17 @@ body {
 .news__meta {
     color: var(--color-text-light);
     font-size: var(--font-size-sm);
-    margin: 0 0 var(--space-lg) 0;
+    margin: 0 0 var(--space-md) 0;
+    font-style: italic;
 }
 
 .news__text {
     color: var(--color-text);
     line-height: var(--line-height-relaxed);
-    margin: 0;
+    margin: var(--space-sm) 0;
+    padding: var(--space-sm);
+    background: var(--color-background-alt);
+    border-radius: var(--radius-base);
 }
 
 /* Стили для страницы контактов */
@@ -636,21 +648,28 @@ body {
 }
 
 .contact-info {
-    background: var(--gradient-light);
+    background: var(--color-background-alt);
     padding: var(--space-xl);
     margin: var(--space-lg) 0;
-    border-radius: var(--radius-xl);
-    font-size: var(--font-size-lg);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-base);
     color: var(--color-main);
-    max-width: 500px;
+    max-width: 600px;
     margin: var(--space-lg) auto;
     box-shadow: var(--shadow-md);
     transition: var(--transition-base);
+    text-align: left;
 }
 
 .contact-info:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
+}
+
+.contact-info h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+    font-size: var(--font-size-lg);
 }
 
 .contact-grid {
@@ -662,16 +681,29 @@ body {
 
 .contact-item {
     background: var(--color-background);
-    padding: var(--space-xl);
+    padding: var(--space-lg);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
     border-left: 4px solid var(--color-primary);
     transition: var(--transition-base);
+    text-align: center;
 }
 
 .contact-item:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
+}
+
+.contact-item h3 {
+    color: var(--color-main);
+    margin-bottom: var(--space-sm);
+    font-size: var(--font-size-lg);
+}
+
+.contact-item p {
+    color: var(--color-text);
+    margin: 0;
+    font-size: var(--font-size-base);
 }
 
 .contact-button {
@@ -682,11 +714,12 @@ body {
     font-size: var(--font-size-base);
     border-radius: var(--radius-xl);
     cursor: pointer;
-    margin-top: var(--space-lg);
+    margin: var(--space-2xl) auto;
     font-weight: var(--font-weight-semibold);
     transition: all var(--transition-base);
-    width: 100%;
-    max-width: 300px;
+    width: auto;
+    min-width: 200px;
+    display: block;
     position: relative;
     overflow: hidden;
 }
@@ -727,10 +760,6 @@ body {
     text-align: center;
     margin-bottom: var(--space-2xl);
     font-weight: var(--font-weight-bold);
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 .sub-heading {
@@ -746,8 +775,9 @@ body {
 .products__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--space-2xl);
-    margin-top: var(--space-2xl);
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+    justify-items: center;
 }
 
 /* Адаптивность */
@@ -760,10 +790,11 @@ body {
     .nav__list {
         flex-direction: column;
         gap: var(--space-sm);
+        padding: 0 var(--space-md);
     }
     
     .skills__list {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .experience__grid {
@@ -771,7 +802,7 @@ body {
     }
     
     .products__grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .main {
@@ -790,13 +821,18 @@ body {
     
     .theme-switcher {
         position: static;
-        margin-top: var(--space-md);
+        margin: var(--space-md) auto;
+        width: auto;
+    }
+    
+    .header {
+        padding: var(--space-xl);
     }
 }
 
 @media (max-width: 480px) {
     .header {
-        padding: var(--space-xl);
+        padding: var(--space-lg);
     }
     
     .header__title {
@@ -816,7 +852,15 @@ body {
     .experience-card,
     .news__item,
     .product-card {
-        padding: var(--space-xl);
+        padding: var(--space-lg);
+    }
+    
+    .products__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills__list {
+        grid-template-columns: 1fr;
     }
     
     :root {

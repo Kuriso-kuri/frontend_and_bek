@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты - Семестровая работа</title>
+    <title>Контакты - Портфолио</title>
     <link rel="stylesheet" href="../style/styles.css">
     <style>
         dialog::backdrop {
@@ -21,52 +21,54 @@
             max-height: 90vh;
             overflow-y: auto;
         }
-        .modal-header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
+        .modal__header {
+            background: linear-gradient(135deg, var(--color-main) 0%, var(--color-dark) 100%);
+            color: var(--color-white);
             padding: 1.5rem;
             border-radius: 12px 12px 0 0;
             margin: 0;
         }
-        .modal-header h2 {
+        .modal__header h2 {
             margin: 0;
-            color: white;
+            color: var(--color-white);
             font-size: 1.5rem;
         }
-        .modal-content {
+        .modal__content {
             padding: 2rem;
         }
-        .form-group {
+        .form__group {
             margin-bottom: 1.5rem;
         }
-        .form-group label {
+        .form__group label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
-            color: #2c3e50;
+            color: var(--color-main);
         }
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
+        .form__group input,
+        .form__group select,
+        .form__group textarea {
             width: 100%;
             padding: 0.75rem;
-            border: 2px solid #e9ecef;
+            border: 2px solid var(--color-border);
             border-radius: 6px;
             font-size: 1rem;
             transition: border-color 0.3s ease;
             box-sizing: border-box;
+            background: var(--color-background);
+            color: var(--color-text);
         }
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
+        .form__group input:focus,
+        .form__group select:focus,
+        .form__group textarea:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: var(--color-primary);
         }
-        .form-group textarea {
+        .form__group textarea {
             min-height: 100px;
             resize: vertical;
         }
-        .modal-actions {
+        .modal__actions {
             display: flex;
             gap: 1rem;
             justify-content: flex-end;
@@ -81,21 +83,21 @@
             transition: all 0.3s ease;
             font-weight: 600;
         }
-        .btn-primary {
+        .btn--primary {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
         }
-        .btn-primary:hover {
+        .btn--primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
-        .btn-secondary {
-            background: #f8f9fa;
-            color: #2c3e50;
-            border: 2px solid #e9ecef;
+        .btn--secondary {
+            background: var(--color-background-alt);
+            color: var(--color-text);
+            border: 2px solid var(--color-border);
         }
-        .btn-secondary:hover {
-            background: #e9ecef;
+        .btn--secondary:hover {
+            background: var(--color-border);
         }
         .required {
             color: #e74c3c;
@@ -107,17 +109,17 @@
             margin: 30px 0;
         }
         .contact-item {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: var(--color-background-alt);
             padding: 20px;
             border-radius: 12px;
             text-align: center;
         }
         .contact-item h3 {
-            color: #2c3e50;
+            color: var(--color-main);
             margin-bottom: 10px;
         }
         .contact-item p {
-            color: #7f8c8d;
+            color: var(--color-text);
             margin: 0;
         }
         @keyframes fadeIn {
@@ -155,22 +157,28 @@
     </style>
 </head>
 <body>
-    <div class="page-container">
+    <div class="page">
         <header class="header">
-            <h1>Хэдер</h1>
+            <h1 class="header__title">Моё портфолио</h1>
+            <button class="theme-switcher" id="themeSwitcher" aria-label="Переключить тему">
+                <svg class="theme-switcher__icon" viewBox="0 0 24 24">
+                    <path d="M12,18C8.69,18 6,15.31 6,12C6,8.69 8.69,6 12,6C15.31,6 18,8.69 18,12C18,15.31 15.31,18 12,18M12,4C7.58,4 4,7.58 4,12C4,16.42 7.58,20 12,20C16.42,20 20,16.42 20,12C20,7.58 16.42,4 12,4M12,7.5C11.72,7.5 11.5,7.72 11.5,8V12C11.5,12.28 11.72,12.5 12,12.5C12.28,12.5 12.5,12.28 12.5,12V8C12.5,7.72 12.28,7.5 12,7.5Z"/>
+                </svg>
+                <span id="themeText">Тёмная</span>
+            </button>
         </header>
         <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
+                <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
+                <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
+                <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
+                <li class="nav__item nav__item--active"><a class="nav__link" href="contacts.html">Контакты</a></li>
             </ul>
         </nav>
-        <main class="content">
-            <h1 class="main-heading">Контакты</h1>
-            <section class="contacts-container">
+        <main class="main">
+            <h1 class="main__heading">Контакты</h1>
+            <section class="contacts">
                 <h2 class="sub-heading">Наши контакты</h2>
                 <article class="contact-info">
                     <h3>Электронная почта</h3>
@@ -198,27 +206,27 @@
             </section>
         </main>
         <footer class="footer">
-            <p>Фантазер, ты меня называла, фантазер</p>
+            <p class="footer__text">Фантазер, ты меня называла, фантазер</p>
         </footer>
         <dialog id="contactModal">
-            <div class="modal-header">
+            <div class="modal__header">
                 <h2>Форма обратной связи</h2>
             </div>
-            <div class="modal-content">
+            <div class="modal__content">
                 <form id="feedbackForm" method="dialog">
-                    <div class="form-group">
+                    <div class="form__group">
                         <label for="name">Имя <span class="required">*</span></label>
                         <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
                     </div>
-                    <div class="form-group">
+                    <div class="form__group">
                         <label for="phone">Телефон <span class="required">*</span></label>
                         <input type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
                     </div>
-                    <div class="form-group">
+                    <div class="form__group">
                         <label for="email">Электронная почта <span class="required">*</span></label>
                         <input type="email" id="email" name="email" required placeholder="example@mail.ru">
                     </div> 
-                    <div class="form-group">
+                    <div class="form__group">
                         <label for="category">Категория обращения <span class="required">*</span></label>
                         <select id="category" name="category" required>
                             <option value="">Выберите категорию</option>
@@ -230,18 +238,43 @@
                             <option value="other">Другое</option>
                         </select>
                     </div>
-                    <div class="form-group">
+                    <div class="form__group">
                         <label for="message">Текст обращения <span class="required">*</span></label>
                         <textarea id="message" name="message" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
                     </div>
-                    <div class="modal-actions">
-                        <button type="submit" class="btn btn-secondary">Отмена</button>
-                        <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
+                    <div class="modal__actions">
+                        <button type="submit" class="btn btn--secondary">Отмена</button>
+                        <button type="button" class="btn btn--primary" onclick="submitForm()">Отправить</button>
                     </div>
                 </form>
             </div>
         </dialog>
         <script>
+            const themeSwitcher = document.getElementById('themeSwitcher');
+            const themeText = document.getElementById('themeText');
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            updateThemeText(currentTheme);
+            
+            themeSwitcher.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateThemeText(newTheme);
+                
+                themeSwitcher.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    themeSwitcher.style.transform = 'scale(1)';
+                }, 150);
+            });
+
+            function updateThemeText(theme) {
+                themeText.textContent = theme === 'light' ? 'Тёмная' : 'Светлая';
+            }
+
             function submitForm() {
                 const form = document.getElementById('feedbackForm');
                 const formData = new FormData(form);
