@@ -3,53 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Новости - Семестровая работа</title>
+    <title>Новости - Портфолио</title>
     <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-    <div class="page-container">
+    <div class="page">
         <header class="header">
-            <h1>Хэдер</h1>
+            <h1 class="header__title">Моё портфолио</h1>
+            <button class="theme-switcher" id="themeSwitcher" aria-label="Переключить тему">
+                <svg class="theme-switcher__icon" viewBox="0 0 24 24">
+                    <path d="M12,18C8.69,18 6,15.31 6,12C6,8.69 8.69,6 12,6C15.31,6 18,8.69 18,12C18,15.31 15.31,18 12,18M12,4C7.58,4 4,7.58 4,12C4,16.42 7.58,20 12,20C16.42,20 20,16.42 20,12C20,7.58 16.42,4 12,4M12,7.5C11.72,7.5 11.5,7.72 11.5,8V12C11.5,12.28 11.72,12.5 12,12.5C12.28,12.5 12.5,12.28 12.5,12V8C12.5,7.72 12.28,7.5 12,7.5Z"/>
+                </svg>
+                <span id="themeText">Тёмная</span>
+            </button>
         </header>
 
         <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
+                <li class="nav__item nav__item--active"><a class="nav__link" href="news.html">Новости</a></li>
+                <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
+                <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
+                <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
             </ul>
         </nav>
 
-        <main class="content">
-            <h1 class="main-heading">Новости</h1>
+        <main class="main">
+            <h1 class="main__heading">Новости</h1>
             
-            <div class="news-container">
-                <article class="news-item">
-                    <h2 class="news-title">Новость 1: новость 1</h2>
-                    <p class="news-meta"><small>Дата: 25.09.2025 | Автор: Матвей Макеенков</small></p>
-                    <p class="text-paragraph">Бла x 1</p>
-                    <p class="text-paragraph">Бла x 2</p>
+            <div class="news">
+                <article class="news__item">
+                    <h2 class="news__title">Новость 1: новость 1</h2>
+                    <p class="news__meta">Дата: 25.09.2025 | Автор: Матвей Макеенков</p>
+                    <p class="news__text">Бла x 1</p>
+                    <p class="news__text">Бла x 2</p>
                 </article>
                 
-                <article class="news-item">
-                    <h2 class="news-title">Новость 2: новость 2</h2>
-                    <p class="news-meta"><small>Дата: 25.09.2025 | Автор: Матвей Макеенков</small></p>
-                    <p class="text-paragraph">Бла бла</p>
+                <article class="news__item">
+                    <h2 class="news__title">Новость 2: новость 2</h2>
+                    <p class="news__meta">Дата: 25.09.2025 | Автор: Матвей Макеенков</p>
+                    <p class="news__text">Бла бла</p>
                 </article>
                 
-                <article class="news-item">
-                    <h2 class="news-title">Новость 3: новость 3</h2>
-                    <p class="news-meta"><small>Дата: 25.09.2025 | Автор: Матвей Макеенков</small></p>
-                    <p class="text-paragraph">Бла бла бла</p>
+                <article class="news__item">
+                    <h2 class="news__title">Новость 3: новость 3</h2>
+                    <p class="news__meta">Дата: 25.09.2025 | Автор: Матвей Макеенков</p>
+                    <p class="news__text">Бла бла бла</p>
                 </article>
             </div>
         </main>
 
         <footer class="footer">
-            <p>Фантазер, ты меня называла, фантазер</p>
+            <p class="footer__text">Фантазер, ты меня называла, фантазер</p>
         </footer>
     </div>
+
+    <script>
+        const themeSwitcher = document.getElementById('themeSwitcher');
+        const themeText = document.getElementById('themeText');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        updateThemeText(currentTheme);
+        
+        themeSwitcher.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeText(newTheme);
+            
+            themeSwitcher.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                themeSwitcher.style.transform = 'scale(1)';
+            }, 150);
+        });
+
+        function updateThemeText(theme) {
+            themeText.textContent = theme === 'light' ? 'Тёмная' : 'Светлая';
+        }
+    </script>
 </body>
 </html>

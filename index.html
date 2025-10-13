@@ -172,4 +172,18 @@
             
             productCards.forEach(card => {
                 card.addEventListener('click', function() {
-                    this.classList.toggle('
+                    this.classList.toggle('product-card--selected');
+                });
+                
+                // Добавляем возможность выбора с клавиатуры
+                card.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.classList.toggle('product-card--selected');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
