@@ -12,6 +12,12 @@
         <!-- Шапка -->
         <header class="header">
             <h1 class="header__title">Моё портфолио</h1>
+            <!-- Переключатель темы -->
+            <button class="theme-switcher" id="themeSwitcher" aria-label="Переключить тему">
+                <svg class="theme-switcher__icon" viewBox="0 0 24 24">
+                    <path d="M12,18C8.69,18 6,15.31 6,12C6,8.69 8.69,6 12,6C15.31,6 18,8.69 18,12C18,15.31 15.31,18 12,18M12,4C7.58,4 4,7.58 4,12C4,16.42 7.58,20 12,20C16.42,20 20,16.42 20,12C20,7.58 16.42,4 12,4M12,7.5C11.72,7.5 11.5,7.72 11.5,8V12C11.5,12.28 11.72,12.5 12,12.5C12.28,12.5 12.5,12.28 12.5,12V8C12.5,7.72 12.28,7.5 12,7.5Z"/>
+                </svg>
+            </button>
         </header>
         
         <!-- Навигация -->
@@ -100,6 +106,28 @@
                     </article>
                 </div>
             </section>
+
+            <!-- Демонстрация карточек товара (Задача 5) -->
+            <section class="experience">
+                <h2 class="experience__title">Демонстрация карточек товара</h2>
+                <div class="products__grid">
+                    <article class="product-card product-card--selected" tabindex="0">
+                        <img src="images/product1.png" alt="Товар 1" class="product-card__image">
+                        <h3 class="product-card__title">Выбранный товар</h3>
+                        <p class="product-card__price"><span class="product-card__price--old">4000₽</span> 3000₽</p>
+                    </article>
+                    <article class="product-card product-card--discount" tabindex="0">
+                        <img src="images/product2.png" alt="Товар 2" class="product-card__image">
+                        <h3 class="product-card__title">Товар со скидкой</h3>
+                        <p class="product-card__price"><span class="product-card__price--old">5000₽</span> 2500₽</p>
+                    </article>
+                    <article class="product-card" tabindex="0">
+                        <img src="images/product3.png" alt="Товар 3" class="product-card__image">
+                        <h3 class="product-card__title">Обычный товар</h3>
+                        <p class="product-card__price">1500₽</p>
+                    </article>
+                </div>
+            </section>
         </main>
         
         <!-- Подвал -->
@@ -107,5 +135,57 @@
             <p class="footer__text">Фантазер, ты меня называла, фантазер</p>
         </footer>
     </div>
+
+    <script>
+        // Переключение темы (Задача 4)
+        const themeSwitcher = document.getElementById('themeSwitcher');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        // Установка начальной темы
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        
+        themeSwitcher.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Анимация переключения
+            themeSwitcher.style.transform = 'scale(0.8)';
+            setTimeout(() => {
+                themeSwitcher.style.transform = 'scale(1)';
+            }, 150);
+        });
+
+        // Интерактивность для карточек товара (Задача 5)
+        document.addEventListener('DOMContentLoaded', () => {
+            const productCards = document.querySelectorAll('.product-card');
+            
+            productCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.classList.toggle('product-card--selected');
+                });
+                
+                // Добавляем возможность выбора с клавиатуры
+                card.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.classList.toggle('product-card--selected');
+                    }
+                });
+            });
+        });
+
+        // Динамическое управление CSS переменными
+        document.addEventListener('DOMContentLoaded', () => {
+            // Пример изменения переменной через JavaScript
+            const updatePrimaryColor = (color) => {
+                document.documentElement.style.setProperty('--color-primary', color);
+            };
+            
+            // Можно добавить дополнительные функции для динамического изменения темы
+        });
+    </script>
 </body>
 </html>
