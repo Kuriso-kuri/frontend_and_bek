@@ -132,6 +132,7 @@ body {
     font-size: var(--font-size-3xl);
     font-weight: var(--font-weight-light);
     letter-spacing: 2px;
+    color: #ffffff !important;
 }
 
 /* Переключатель темы */
@@ -596,6 +597,7 @@ body {
 
 .footer__text {
     font-weight: var(--font-weight-medium);
+    color: #ffffff !important;
 }
 
 /* Стили для страницы новостей */
