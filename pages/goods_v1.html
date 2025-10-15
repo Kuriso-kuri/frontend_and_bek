@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Товары - Портфолио</title>
+    <link rel="stylesheet" href="../style/styles.css">
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <h1 class="header__title">Моё портфолио</h1>
+            <button class="theme-switcher" id="themeSwitcher" aria-label="Переключить тему">
+                <svg class="theme-switcher__icon" viewBox="0 0 24 24">
+                    <path d="M12,18C8.69,18 6,15.31 6,12C6,8.69 8.69,6 12,6C15.31,6 18,8.69 18,12C18,15.31 15.31,18 12,18M12,4C7.58,4 4,7.58 4,12C4,16.42 7.58,20 12,20C16.42,20 20,16.42 20,12C20,7.58 16.42,4 12,4M12,7.5C11.72,7.5 11.5,7.72 11.5,8V12C11.5,12.28 11.72,12.5 12,12.5C12.28,12.5 12.5,12.28 12.5,12V8C12.5,7.72 12.28,7.5 12,7.5Z"/>
+                </svg>
+                <span id="themeText">Тёмная</span>
+            </button>
+        </header>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
+                <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
+                <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
+                <li class="nav__item nav__item--active"><a class="nav__link" href="goods.html">Товары</a></li>
+                <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <main class="main">
+            <h1 class="main__heading">Наши товары</h1>
+            <div class="products__grid">
+                <article class="product-card product-card--highlight product-card--featured">
+                    <img src="../images/product1.png" alt="Товар 1" class="product-card__image">
+                    <h3 class="product-card__title">Берет снятый с убитого клашара</h3>
+                    <p class="product-card__price">3000000₽</p>
+                </article>
+                <article class="product-card">
+                    <img src="../images/product2.png" alt="Товар 2" class="product-card__image">
+                    <h3 class="product-card__title">Горгород</h3>
+                    <p class="product-card__price">дисс от Славы КПСС</p>
+                </article>
+                <article class="product-card product-card--highlight">
+                    <img src="../images/product3.png" alt="Товар 3" class="product-card__image">
+                    <h3 class="product-card__title">Кто убил Марка</h3>
+                    <p class="product-card__price">дисс от Славы КПСС</p>
+                </article>
+                <article class="product-card">
+                    <img src="../images/product4.png" alt="Товар 4" class="product-card__image">
+                    <h3 class="product-card__title">Любое действие</h3>
+                    <p class="product-card__price">дисс от Славы КПСС</p>
+                </article>
+            </div>
+        </main>
+        <footer class="footer">
+            <p class="footer__text">Фантазер, ты меня называла, фантазер</p>
+        </footer>
+    </div>
+    <script>
+        const themeSwitcher = document.getElementById('themeSwitcher');
+        const themeText = document.getElementById('themeText');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        updateThemeText(currentTheme);
+        themeSwitcher.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeText(newTheme);
+            themeSwitcher.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                themeSwitcher.style.transform = 'scale(1)';
+            }, 150);
+        });
+        function updateThemeText(theme) {
+            themeText.textContent = theme === 'light' ? 'Тёмная' : 'Светлая';
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.classList.toggle('product-card--selected');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
