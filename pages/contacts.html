@@ -177,7 +177,6 @@
             </ul>
         </nav>
         <main class="main">
-            <!-- ЗАГОЛОВКИ ВЫРОВНЕНЫ ПО ЦЕНТРУ -->
             <h1 class="main__heading text-center">Контакты</h1>
             <section class="contacts">
                 <h2 class="sub-heading text-center">Наши контакты</h2>
@@ -254,28 +253,22 @@
             const themeSwitcher = document.getElementById('themeSwitcher');
             const themeText = document.getElementById('themeText');
             const currentTheme = localStorage.getItem('theme') || 'light';
-            
             document.documentElement.setAttribute('data-theme', currentTheme);
             updateThemeText(currentTheme);
-            
             themeSwitcher.addEventListener('click', () => {
                 const currentTheme = document.documentElement.getAttribute('data-theme');
                 const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                
                 document.documentElement.setAttribute('data-theme', newTheme);
                 localStorage.setItem('theme', newTheme);
                 updateThemeText(newTheme);
-                
                 themeSwitcher.style.transform = 'scale(0.9)';
                 setTimeout(() => {
                     themeSwitcher.style.transform = 'scale(1)';
                 }, 150);
             });
-
             function updateThemeText(theme) {
                 themeText.textContent = theme === 'light' ? 'Тёмная' : 'Светлая';
             }
-
             function submitForm() {
                 const form = document.getElementById('feedbackForm');
                 const formData = new FormData(form);
